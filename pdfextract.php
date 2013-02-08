@@ -24,10 +24,10 @@ try {
 
 function createNewPDF($paginas,$arquivoPDF){
 	$pdf = new FPDI();
-	$pagecount 	= $pdf->setSourceFile($arquivoPDF);
+	$pagecount = $pdf->setSourceFile($arquivoPDF);
 	for($i=1;$i<=$pagecount;$i++){
 		if(in_array($i, $paginas)){
-			$tplidx 	= $pdf->importPage($i, '/MediaBox');
+			$tplidx = $pdf->importPage($i, '/MediaBox');
 			$pdf->addPage();
 			$pdf->useTemplate($tplidx, 10, 10, 90);
 		}
