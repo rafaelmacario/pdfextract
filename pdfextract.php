@@ -10,16 +10,16 @@
 
 date_default_timezone_set('America/Sao_Paulo');
 
-require_once('../config/lang/eng.php');
-require_once('../tcpdf.php');
-require_once('../fpdi/src/fpdi.php');
+require_once('lang/eng.php');
+require_once('tcpdf.php');
+require_once('fpdi/src/fpdi.php');
 
 $arquivoPDF = 'seu_arquivo_aqui.pdf';
 $paginas = array(1,2,3,4,5,6,7,8,9,10); //páginas selecionadas para formarem um novo pdf
 try {
-  createNewPDF($paginas,$arquivoPDF);
+ createNewPDF($paginas,$arquivoPDF);
 } catch (Exception $e) {
-	print "Erro: ".$e;
+ print "Erro: ".$e;
 }
 
 function createNewPDF($paginas,$arquivoPDF){
